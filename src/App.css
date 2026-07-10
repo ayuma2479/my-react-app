@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+  background: #eef4fb;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.cart-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background: linear-gradient(180deg, #f6f9fd 0%, #edf4fb 100%);
+}
+
+.cart-card {
+  width: min(100%, 760px);
+  padding: 56px 48px;
+  border-radius: 36px;
+  background: #ffffff;
+  box-shadow: 0 22px 60px rgba(111, 146, 185, 0.18);
+}
+
+.cart-title {
+  margin: 0 0 42px;
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #1f2b43;
+  letter-spacing: 0.04em;
+}
+
+.count-panel {
+  padding: 42px 24px;
+  border: 2px solid #dfe6f1;
+  border-radius: 28px;
+  background: #f9fbff;
+  text-align: center;
+}
+
+.count-label {
+  margin: 0 0 28px;
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  color: #7b879d;
+}
+
+.count-box {
+  width: min(100%, 280px);
+  margin: 0 auto;
+  padding: 26px 20px;
+  border-radius: 24px;
+  background: #f1f5fb;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 700;
+  color: #0c8b83;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.button-row {
+  display: flex;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.plus-button,
+.minus-button,
+.cart-button {
+  border: none;
+  border-radius: 22px;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.plus-button:hover,
+.minus-button:hover,
+.cart-button:hover {
+  transform: translateY(-2px);
+}
+
+.plus-button:active,
+.minus-button:active,
+.cart-button:active {
+  transform: translateY(0);
+}
+
+.plus-button,
+.minus-button {
+  flex: 1;
+  padding: 24px 20px;
+}
+
+.plus-button {
+  color: #ffffff;
+  background: linear-gradient(180deg, #4284ff 0%, #1f63e2 100%);
+  box-shadow: 0 12px 24px rgba(48, 109, 236, 0.28);
+}
+
+.minus-button {
+  color: #4b5a73;
+  background: linear-gradient(180deg, #f5f7fb 0%, #e9eef6 100%);
+  box-shadow: 0 10px 22px rgba(110, 130, 160, 0.16);
+}
+
+.cart-button {
+  width: 100%;
+  margin-top: 32px;
+  padding: 24px 20px;
+  color: #ffffff;
+  background: linear-gradient(180deg, #17b36b 0%, #0d8b52 100%);
+  box-shadow: 0 14px 28px rgba(13, 139, 82, 0.28);
+}
+
+@media (max-width: 640px) {
+  .cart-card {
+    padding: 36px 20px;
+    border-radius: 28px;
+  }
+
+  .count-panel {
+    padding: 28px 16px;
+  }
+
+  .button-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
