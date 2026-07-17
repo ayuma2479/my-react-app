@@ -1,16 +1,46 @@
-# React + Vite
+# Ayuma Ishihara Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+石原歩真の活動と興味領域を紹介する、React + JavaScript製のポートフォリオサイトです。Figma node `4900:131` の出力をデザインリファレンスとして参照し、生成HTMLは流用せず、セマンティックなReactコンポーネントとレスポンシブCSSに組み直しました。
 
-Currently, two official plugins are available:
+## コンセプト
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+このポートフォリオのコンセプトは、「異なる知識が交差する場所から、まだない未来へ進む人」です。主な閲覧者として、インターンや共同プロジェクトを検討する企業、技術者、起業家を想定しています。最初の数秒で人物の顔と名前、関心領域が伝わるよう、Heroでは大きなタイポグラフィと活動中の写真を重ねました。その後は About、History、Interesting、Skills、Works の順に、人物像から背景、専門性、具体的な行動へと理解が深まる構成にしています。メインカラーの濃紺 `#283A84` は、技術への誠実さと未来に向かう意志を表し、背景の `#FAFAFA` と広い余白によって、若さだけではなく落ち着きと信頼感も感じられるようにしました。写真、太い英字見出し、細い罫線を繰り返すことで、Figmaのシャープな印象をサイト全体で統一しています。
 
-## React Compiler
+内容面では、AI・ロボット・ビジネスを別々の能力として羅列せず、「人の楽しい時間を支え、その中の不便を取り除く」という一つの目的に結びつけました。Historyでは挑戦の変化が追えるよう時系列を明示し、Worksでは役割と学びが素早く読めるカードに整理しています。カテゴリーで絞り込めるため、閲覧者は関心に近い活動へ直接アクセスできます。スマートフォンではすべてを1カラムに変え、文字の大きさと余白を `clamp()` で滑らかに調整しました。Contactは入力エラーをその場で伝え、キーボードや読み上げでも操作しやすい構造にしています。技術、事業、デザインを横断しながら、考えるだけで終わらず試作と実践へ進む姿勢が、スクロール体験そのものから伝わることを狙っています。
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 主な機能
 
-## Expanding the Oxlint configuration
+- Header / Hero / About / History / Interesting / Skills / Works / Contact / Footer のセクションコンポーネント
+- 配列データから生成するWorksカードとカテゴリーフィルター
+- 必須、メール形式、最小文字数を確認するContactフォーム
+- CSS Grid、Flexbox、`clamp()` によるPC・スマートフォン対応
+- キーボード操作、エラー通知、reduced motionなどのアクセシビリティ対応
+- GitHub ActionsからGitHub Pagesへ自動デプロイ
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## ローカル実行
+
+```bash
+npm install
+npm run dev
+```
+
+本番ビルドは `npm run build`、静的ビルドの確認は `npm run preview` で行います。
+
+## GitHub Pages
+
+1. このフォルダをGitHubリポジトリのルートとしてpushします。
+2. GitHubの `Settings > Pages > Build and deployment` でSourceを `GitHub Actions` にします。
+3. `main` ブランチへのpushで `.github/workflows/deploy.yml` が実行されます。
+
+## 生成AIの使用について
+
+神山まるごと高専「AIガイドライン」に基づき、以下を開示します。
+
+- 使用ツール: OpenAI Codex（GPT-5）
+- 生成日時: 2026年7月17日
+- 使用箇所: Reactコンポーネントの初稿、Worksフィルター、Contactバリデーション、レスポンシブCSS、GitHub Actions設定、README構成の提案
+- 使用方法: 「Figma出力をデザイン参照として、固定配置を使わずReact + JavaScriptで再構築する」という要件を入力し、コード雛形と主要ロジックを生成
+- 検証・修正: 生成内容を要件と照合し、ローカルビルド、ブラウザ表示、レスポンシブ表示、フォーム挙動を確認したうえで手動調整
+- 入力情報: 課題文、公開を前提に提供されたFigma出力と画像、学校のAIガイドライン。学籍番号・住所・成績などの個人情報や機密情報は入力していません。
+
+最終的な内容、掲載情報、デザイン、コードの提出判断と責任は制作者本人にあります。
